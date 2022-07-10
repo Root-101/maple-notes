@@ -1,0 +1,1 @@
+library notes_widgets_exporter;
