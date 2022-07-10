@@ -3,7 +3,7 @@ description: Maple module/app for taking notes
 
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 0.0.1-SNAPSHOT.20220710
 
 environment:
   sdk: ">=2.15.0 <3.0.0"
@@ -13,12 +13,28 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Architecture & Management
+  get: ^4.6.5
+  clean_core:
+    path: ../../clean-core-flutter
 
   cupertino_icons: ^1.0.2
+
+  #DB
+  objectbox: ^1.4.1
+  objectbox_flutter_libs: ^1.4.1
+  flat_buffers: ^2.0.5
+  path_provider: ^2.0.9
+  clean_repo_objectbox:
+    path: ../../clean_repo_objectbox
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  #DB code generation
+  build_runner: ^2.1.8
+  objectbox_generator: ^1.4.1
 
   flutter_lints: ^1.0.0
 
