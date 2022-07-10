@@ -1,12 +1,12 @@
 import 'package:clean_core/clean_core.dart';
 
-class NoteEntity extends BasicDomainObject<NoteEntity> {
+class NoteDomain extends BasicDomainObject<NoteDomain> {
   int id;
   String title;
   String content;
   int color;
 
-  NoteEntity({
+  NoteDomain({
     required this.title,
     required this.content,
     this.id = 0,
