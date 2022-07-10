@@ -1,0 +1,1 @@
+library notes_app_module_exporter;

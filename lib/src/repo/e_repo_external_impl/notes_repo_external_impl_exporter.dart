@@ -1,0 +1,1 @@
+library notes_repo_external_impl_exporter;
