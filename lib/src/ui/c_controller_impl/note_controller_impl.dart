@@ -22,5 +22,6 @@ class NoteControllerImpl extends NoteController {
       title: "Title: ${Random().nextInt(5000)}",
       content: "Content: ${Random().nextInt(5000)}",
     ));
+    update();
   }
 }
