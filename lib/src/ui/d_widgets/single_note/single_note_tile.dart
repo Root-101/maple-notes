@@ -12,7 +12,12 @@ class SingleNoteTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: note.color,
+      decoration: BoxDecoration(
+        color: note.color,
+        border: Border.all(
+          color: Colors.black45,
+        ),
+      ),
       child: Column(
         children: [
           Text(
