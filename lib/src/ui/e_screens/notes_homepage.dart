@@ -32,7 +32,12 @@ class NotesHomepage extends GetView<NoteController> {
           )
         ],
       ),
-      body: const NoteView(),
+      body: NoteView(),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () => controller.createRandom(),
+        backgroundColor: Colors.green,
+      ),
     );
   }
 }
