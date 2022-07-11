@@ -13,6 +13,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  #UI
+  flutter_staggered_animations: ^1.0.0
+
   # Architecture & Management
   get: ^4.6.5
   clean_core:
