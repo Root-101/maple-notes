@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:maple_notes/maple_notes.dart';
 
-class SingleNoteTile extends StatelessWidget {
+class SingleNoteTile extends GetView<NoteController> {
   final NoteDomain note;
 
   const SingleNoteTile({
@@ -11,22 +12,25 @@ class SingleNoteTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: note.color,
-        border: Border.all(
-          color: Colors.black45,
+    return GestureDetector(
+      onTap: () => controller.destroy(note),
+      child: Container(
+        decoration: BoxDecoration(
+          color: note.color,
+          border: Border.all(
+            color: Colors.black45,
+          ),
         ),
-      ),
-      child: Column(
-        children: [
-          Text(
-            note.title,
-          ),
-          Text(
-            note.content,
-          ),
-        ],
+        child: Column(
+          children: [
+            Text(
+              note.title,
+            ),
+            Text(
+              note.content,
+            ),
+          ],
+        ),
       ),
     );
   }

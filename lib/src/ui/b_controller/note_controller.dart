@@ -11,4 +11,6 @@ abstract class NoteController extends GetxController {
   NotesViewTypeEnum currentView();
 
   void toggleView();
+
+  void destroy(NoteDomain note);
 }

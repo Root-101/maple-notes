@@ -1,6 +1,6 @@
 import 'dart:math';
-import 'dart:ui';
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:maple_notes/maple_notes.dart';
 
@@ -24,11 +24,17 @@ class NoteControllerImpl extends NoteController {
       NoteDomain(
         title: "Title: ${Random().nextInt(5000)}",
         content: "Content: ${Random().nextInt(5000)}",
-        color: Color(
-          Random().nextInt(247000000),
-        ),
+        color: Colors.primaries[Random().nextInt(
+          Colors.primaries.length,
+        )],
       ),
     );
+    update();
+  }
+
+  @override
+  void destroy(NoteDomain note) {
+    noteUC.destroy(note);
     update();
   }
 
