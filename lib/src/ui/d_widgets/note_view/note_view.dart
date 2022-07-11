@@ -4,7 +4,13 @@ import 'package:get/get.dart';
 import 'package:maple_notes/maple_notes.dart';
 
 class NoteView extends GetView<NoteController> {
-  const NoteView({Key? key}) : super(key: key);
+  int _keyId = 0;
+
+  int keyId() {
+    return _keyId++ % 2;
+  }
+
+  NoteView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +26,7 @@ class NoteView extends GetView<NoteController> {
   Widget buildListView() {
     List<NoteDomain> notes = controller.findAll();
     return AnimationLimiter(
-      key: const ValueKey("notes_list_view"),
+      key: ValueKey("notes_list_view_${keyId()}"),
       child: ListView.builder(
         itemCount: notes.length,
         itemBuilder: (context, index) => AnimationConfiguration.staggeredList(
@@ -43,7 +49,7 @@ class NoteView extends GetView<NoteController> {
     List<NoteDomain> notes = controller.findAll();
     const int cantColumns = 2;
     return AnimationLimiter(
-      key: const ValueKey("notes_grid_view"),
+      key: ValueKey("notes_grid_view_${keyId()}"),
       child: GridView.builder(
         itemCount: notes.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
