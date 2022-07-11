@@ -38,6 +38,11 @@ class SingleNoteTile extends GetView<NoteController> {
                   ...md.ExtensionSet.gitHubFlavored.inlineSyntaxes
                 ],
               ),
+              styleSheet: MarkdownStyleSheet.fromTheme(
+                Get.theme,
+              ).copyWith(
+                textScaleFactor: 1.5, //ajustar aqui la escala de tamanno
+              ),
             ),
           ],
         ),
