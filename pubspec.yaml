@@ -15,6 +15,7 @@ dependencies:
 
   #UI
   flutter_staggered_animations: ^1.0.0
+  flutter_markdown: ^0.6.10
 
   # Architecture & Management
   get: ^4.6.5
