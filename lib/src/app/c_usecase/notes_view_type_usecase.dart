@@ -4,5 +4,7 @@ import 'package:maple_notes/maple_notes.dart';
 abstract class NotesViewTypeUseCase extends SingleKeyValueUseCase<String, int> {
   void changeView(NotesViewTypeEnum type);
 
+  void toggleView();
+
   NotesViewTypeEnum getCurrentValue();
 }

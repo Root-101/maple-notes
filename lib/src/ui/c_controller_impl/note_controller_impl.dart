@@ -1,10 +1,12 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:get/get.dart';
 import 'package:maple_notes/maple_notes.dart';
 
 class NoteControllerImpl extends NoteController {
   final NoteUseCase noteUC = Get.find<NoteUseCase>();
+  final NotesViewTypeUseCase viewTypeUC = Get.find<NotesViewTypeUseCase>();
 
   @override
   List<NoteDomain> findAll() {
@@ -18,10 +20,26 @@ class NoteControllerImpl extends NoteController {
 
   @override
   void createRandom() {
-    noteUC.create(NoteDomain(
-      title: "Title: ${Random().nextInt(5000)}",
-      content: "Content: ${Random().nextInt(5000)}",
-    ));
+    noteUC.create(
+      NoteDomain(
+        title: "Title: ${Random().nextInt(5000)}",
+        content: "Content: ${Random().nextInt(5000)}",
+        color: Color(
+          Random().nextInt(247000000),
+        ),
+      ),
+    );
     update();
+  }
+
+  @override
+  void toggleView() {
+    viewTypeUC.toggleView();
+    update();
+  }
+
+  @override
+  NotesViewTypeEnum currentView() {
+    return viewTypeUC.getCurrentValue();
   }
 }

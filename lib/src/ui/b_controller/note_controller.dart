@@ -7,4 +7,8 @@ abstract class NoteController extends GetxController {
   int count();
 
   void createRandom();
+
+  NotesViewTypeEnum currentView();
+
+  void toggleView();
 }

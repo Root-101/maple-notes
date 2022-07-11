@@ -36,6 +36,16 @@ class NotesViewTypeUseCaseImpl extends SingleKeyValueUseCaseImpl<String, int>
         return DEFAULT_VALUE_OBJECT;
     }
   }
+
+  @override
+  void toggleView() {
+    NotesViewTypeEnum current = getCurrentValue();
+    if (current == NotesViewTypeEnum.LIST) {
+      changeView(NotesViewTypeEnum.GRID);
+    } else {
+      changeView(NotesViewTypeEnum.LIST);
+    }
+  }
 }
 
 class VibrationKeyValueConverter

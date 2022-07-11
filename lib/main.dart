@@ -3,10 +3,12 @@ import 'package:get/get.dart';
 import 'package:maple_notes/maple_notes.dart';
 
 void main() {
-  runApp(SplashScreen());
+  runApp(const SplashScreen());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: NotesHomepage.ROUTE_NAME,
-          page: () => NotesHomepage(),
+          page: () => const NotesHomepage(),
           transition: Transition.fadeIn,
         ),
       ],
@@ -47,7 +49,7 @@ class SplashScreen extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         } else {
-          return MyApp();
+          return const MyApp();
         }
       },
     );

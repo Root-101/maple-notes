@@ -5,9 +5,11 @@ class NoteCoreModule {
   static Future init() async {
     await NoteRepoModule.init();
 
-    //el de progreso con la BD
     Get.put<NoteUseCase>(
       NoteUseCaseImpl(NoteRepoModule.noteRepo),
+    );
+    Get.put<NotesViewTypeUseCase>(
+      NotesViewTypeUseCaseImpl(),
     );
   }
 

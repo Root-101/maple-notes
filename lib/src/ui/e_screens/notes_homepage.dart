@@ -19,6 +19,16 @@ class NotesHomepage extends GetView<NoteController> {
             icon: const Icon(
               Icons.add,
             ),
+          ),
+          IconButton(
+            onPressed: () {
+              controller.toggleView();
+            },
+            icon: Icon(
+              controller.currentView() == NotesViewTypeEnum.LIST
+                  ? Icons.grid_3x3
+                  : Icons.list,
+            ),
           )
         ],
       ),
