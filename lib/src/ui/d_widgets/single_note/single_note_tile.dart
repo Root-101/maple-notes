@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:get/get.dart';
 import 'package:maple_notes/maple_notes.dart';
+import 'package:markdown/markdown.dart' as md;
 
 class SingleNoteTile extends GetView<NoteController> {
   final NoteDomain note;
@@ -26,8 +28,16 @@ class SingleNoteTile extends GetView<NoteController> {
             Text(
               note.title,
             ),
-            Text(
-              note.content,
+            MarkdownBody(
+              data: note.content,
+              selectable: true,
+              extensionSet: md.ExtensionSet(
+                md.ExtensionSet.gitHubFlavored.blockSyntaxes,
+                [
+                  md.EmojiSyntax(),
+                  ...md.ExtensionSet.gitHubFlavored.inlineSyntaxes
+                ],
+              ),
             ),
           ],
         ),

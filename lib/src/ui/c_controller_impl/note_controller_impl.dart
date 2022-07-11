@@ -23,7 +23,17 @@ class NoteControllerImpl extends NoteController {
     noteUC.create(
       NoteDomain(
         title: "Title: ${Random().nextInt(5000)}",
-        content: "Content: ${Random().nextInt(5000)}",
+        content: """
+Content: ${Random().nextInt(5000)}
+
+# Yeah baby
+
+***italic bold 1***
+
+☻
+
+:+1:
+        """,
         color: Colors.primaries[Random().nextInt(
           Colors.primaries.length,
         )],
